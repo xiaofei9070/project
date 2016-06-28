@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd" >
+	
+	<!-- 客户端 -->
+	<bean id="registry" class="org.springframework.remoting.rmi.RmiRegistryFactoryBean">
+		<property name="port" value="1599"></property>
+	</bean>
+	
+	<bean id="userservice" class="com.star.rmi.UserServiceImpl"></bean>
+	
+	<bean id="userExporter" class="org.springframework.remoting.rmi.RmiServiceExporter">
+		<property name="serviceName" value="UserService"></property>
+		<property name="service" ref="userservice"></property>
+		<property name="serviceInterface" value="com.star.rmi.UserService"></property>
+		<!-- <property name="registryPort" value="1599"></property> -->
+		<property name="registry" ref="registry"></property>
+		<!-- <property name="servicePort" value="458"></property> -->
+		<property name="registryHost" value="192.168.1.88"></property>
+	</bean>
+	
+</beans>
