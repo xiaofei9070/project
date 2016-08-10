@@ -304,6 +304,5 @@ public class FileOpUtil {
 		String str = encodeBase64File("D:\\Documents\\Downloads\\280\\280.jpg");
 		decptryBase64File(str, "D:\\Documents\\Downloads\\280\\281.jpg");
 		String[] s = {"D:\\Documents\\Downloads\\280"};
-		doZip("D:\\Documents\\Downloads\\280.zip", s);
 	}
 }

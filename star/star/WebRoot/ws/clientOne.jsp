@@ -19,8 +19,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<script type="text/javascript" src="http://www.gangzhigou.com/js/jquery-1.7.1.min.js"></script>
-	<script src="http://cdn.sockjs.org/sockjs-0.3.min.js"></script>  
+	<script type="text/javascript" src="http://news.gangzhigou.com/statics/js/jquery-1.12.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/sockjs/0.3.4/sockjs.min.js"></script>  
 	<script type="text/javascript">
 		var local = function (){
 			var obj = window.location;

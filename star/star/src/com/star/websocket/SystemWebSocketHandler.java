@@ -29,7 +29,7 @@ public class SystemWebSocketHandler implements WebSocketHandler {
 	@Override
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus arg1)
 			throws Exception {
-		System.out.println("connect to the websocket close......");
+		logger.debug("connect to the websocket close......");
 		users.remove(session);
 	}
 
@@ -39,7 +39,6 @@ public class SystemWebSocketHandler implements WebSocketHandler {
 		users.add(session);
 		session.sendMessage(new TextMessage(users.size() + ""));
 		System.out.println("connect to the websocket success......");
-		System.out.println(users.size());
 	}
 
 	@Override
@@ -47,7 +46,10 @@ public class SystemWebSocketHandler implements WebSocketHandler {
 			throws Exception {
 		TextMessage returnMessage = new TextMessage(wsm.getPayload()
 				+ " received at server");
-		session.sendMessage(returnMessage);
+		System.out.println(wsm.getPayload().toString().split("@")[0]);
+//		session.sendMessage(returnMessage);
+		sendMessageToUsers(returnMessage);
+		
 	}
 
 	@Override
@@ -62,7 +64,7 @@ public class SystemWebSocketHandler implements WebSocketHandler {
 
 	@Override
 	public boolean supportsPartialMessages() {
-		return false;
+		return true;
 	}
 	/**
 	 * 给所有在线用户发送消息
@@ -71,6 +73,7 @@ public class SystemWebSocketHandler implements WebSocketHandler {
 	public void sendMessageToUsers(TextMessage message){
 		for (WebSocketSession user : users) {
 			try {
+				System.out.println(user.getAttributes().get(Cons.WEBSOCKET_USERNAME));
 				if (user.isOpen()){
 					user.sendMessage(message);
 				}

@@ -7,7 +7,7 @@
 	
 	<bean id="websocket" class="com.star.websocket.SystemWebSocketHandler"/>
 	
-	<websocket:handlers>
+	<websocket:handlers allowed-origins="*"><!-- allowered 设置为可跨域 -->
 		<websocket:mapping handler="websocket" path="/websocket"/>
 		<websocket:handshake-interceptors>
 			<bean class="com.star.websocket.HandshakeInterceptor"/>

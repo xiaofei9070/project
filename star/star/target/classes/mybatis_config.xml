@@ -24,4 +24,13 @@
 	<mappers>
 		<mapper resource="mybatis/UserMapper.xml"/>
 	</mappers> -->
+	
+	<!-- 如果出错需查询将 mybaits 版本修改为3.28  并将 SqlUtis forObject 方法中null参数去掉 -->
+	<plugins>
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<property name="dialect" value="mysql" />
+			<property name="pageSizeZero" value="true" />
+			<property name="reasonable" value="true" />
+		</plugin>
+	</plugins>
 </configuration>

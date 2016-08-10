@@ -10,7 +10,7 @@
   <url>http://maven.apache.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <org.springframework.version>4.3.0.RELEASE</org.springframework.version>
+    <org.springframework.version>4.3.1.RELEASE</org.springframework.version>
   </properties>
   <dependencies>
     <dependency>
@@ -213,6 +213,12 @@
 		<version>${org.springframework.version}</version>
 	</dependency>
 	<dependency>
+	    <groupId>org.aspectj</groupId>
+	    <artifactId>aspectjweaver</artifactId>
+	    <version>1.8.9</version>
+	</dependency>
+	
+	<dependency>
 		<groupId>org.springframework</groupId>
 		<artifactId>spring-web</artifactId>
 		<version>${org.springframework.version}</version>
@@ -244,7 +250,11 @@
 		<artifactId>mybatis</artifactId>
 		<version>3.3.1</version>
 	</dependency>
-	
+	<dependency>
+	    <groupId>com.github.jsqlparser</groupId>
+	    <artifactId>jsqlparser</artifactId>
+	    <version>0.9.1</version>
+	</dependency>
 	<dependency>
         <groupId>com.alibaba</groupId>
         <artifactId>druid</artifactId>
@@ -262,7 +272,15 @@
 			</exclusion>
 		</exclusions>
 	</dependency>
-    
+	
+	<!-- sse -->
+	<dependency>
+	    <groupId>org.eclipse.jetty</groupId>
+	    <artifactId>jetty-eventsource-servlet</artifactId>
+	    <version>1.0.0</version>
+	</dependency>
+	
+	
   </dependencies>
   <build>
     <finalName>star</finalName>

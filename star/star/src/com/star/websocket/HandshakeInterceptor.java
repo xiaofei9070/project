@@ -27,6 +27,7 @@ public class HandshakeInterceptor extends HttpSessionHandshakeInterceptor {
 				attributes.put(Cons.WEBSOCKET_USERNAME, userName);
 			}
 		}
+		System.out.println(getAttributeNames());
 		return true;
 	}
 	
@@ -35,5 +36,6 @@ public class HandshakeInterceptor extends HttpSessionHandshakeInterceptor {
 			ServerHttpResponse response, WebSocketHandler wsHandler,
 			Exception ex) {
 	}
+	
 	
 }

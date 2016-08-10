@@ -21,5 +21,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.generic_6.0"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/thumbnailator-0.4.8.jar" sourcepath="WebRoot/WEB-INF/resource/net/coobird/thumbnailator"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
