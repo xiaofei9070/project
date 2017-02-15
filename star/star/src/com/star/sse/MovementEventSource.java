@@ -34,7 +34,9 @@ public class MovementEventSource implements EventSource{
 		// TODO Auto-generated method stub
 		emit.comment("");
 		emit.data("111");
-		System.out.println(1111);
+		
+		
+		
 	}
 
 }

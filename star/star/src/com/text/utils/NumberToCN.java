@@ -113,7 +113,7 @@ public class NumberToCN {
          return sb.toString();
      }
       public static void main(String[] args) {
-           double money = 200004.01;
+           double money = 3674;
            BigDecimal numberOfMoney = new BigDecimal(money);
            String s = NumberToCN.number2CNMontrayUnit(numberOfMoney);
            System.out.println("你输入的金额为：【"+ money +"】   #--# [" +s+"]");

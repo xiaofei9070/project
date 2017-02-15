@@ -56,8 +56,11 @@ public class GZIP {
 	
 	public static void main(String[] args) throws UnsupportedEncodingException, IOException {
 		String com = compress("规格gzipgzip过多  大大大大");
+		System.out.println(com);
 		System.out.println(com.length());
 		System.out.println(unCompress(com));
+		
+		System.out.println(3 ^ 11);
 	}
 	
 }

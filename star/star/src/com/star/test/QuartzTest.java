@@ -20,6 +20,9 @@ public class QuartzTest implements Job{
 
         JobDetail jobDetail = new JobDetail("helloQuartzJob", 
                 Scheduler.DEFAULT_GROUP, QuartzTest.class);
+        
+        JobDetail jobDetail1 = new JobDetail("helloQuartzJob1", 
+                Scheduler.DEFAULT_GROUP, QuartzTest.class);
 
 //        SimpleTrigger simpleTrigger = new SimpleTrigger("simpleTrigger", 
 //                Scheduler.DEFAULT_GROUP);
@@ -30,7 +33,11 @@ public class QuartzTest implements Job{
         String cronExpression = "1/5 * * * * ?";
         CronTrigger cronTrigger = new CronTrigger("cronTrigger", Scheduler.DEFAULT_GROUP, cronExpression);
         scheduler.scheduleJob(jobDetail, cronTrigger);
-
+        
+        String cronExpression1 = "1/7 * * * * ?";
+        CronTrigger cronTrigger1 = new CronTrigger("cronTrigger1", Scheduler.DEFAULT_GROUP, cronExpression1);
+        scheduler.scheduleJob(jobDetail1, cronTrigger1);
+        
         scheduler.start();
 		
 	}
