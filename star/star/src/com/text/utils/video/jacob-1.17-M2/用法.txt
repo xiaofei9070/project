@@ -1,0 +1,3 @@
+根据jdk版本64 或者32将x64或者x86复制到jdk/jre/bin下 
+如果是用tomcat使用就将此文件复制到bin目录下
+jacob.jar与dll 需要配套
